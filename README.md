@@ -51,8 +51,8 @@ $ npm run build
 ## How to add products or perform CRUD operations for Admin
 1. Navigate to your site to `/signin`
 2. Signin with following credentials:
-  email: admin@gmail.com
-  password: Admin123
+email: admin@gmail.com
+password: Admin123
 4. You can add more products now
  
 
