@@ -1,6 +1,5 @@
 # Salinaka | E-commerce react app
 Simple ecommerce react js app with firebase [typescript].
-![Firebase Deploy](https://github.com/jgudo/ecommerce-react/workflows/Firebase%20Deploy/badge.svg)
 
 ### [Live demo](https://salinaka-ecommerce.web.app/)
 
@@ -32,9 +31,6 @@ FIREBASE_MSG_SENDER_ID=763294262927
 FIREBASE_APP_ID=1:763294262927:web:afd7f1f06660147c88b2f
 
 ``` 
-
-After setting up necessary configuration,
-create a **Database** and choose **Cloud Firestore** and start in test mode
 
 ### 3. Run development server
 ```sh 
