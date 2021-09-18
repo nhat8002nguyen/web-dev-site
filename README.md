@@ -15,22 +15,21 @@ Simple ecommerce react js app with firebase [typescript].
 $ npm install
 ```
 
-### 2. Create a new firebase project
-Login to your google account and create a new firebase project [here](https://console.firebase.google.com/u/0/)
+### 2. Create a env file with firebase configuration:
 
 Create an `env` file - Set filename`.env.prod` file for production and `.env.dev`for development and save it in the root of your project folder
-and add the following configuration details. You can either use the same configuration details for both development and production but it's best to make separate projects. It can be found on your firebase project settings.
+and add the following configuration details. You can either use the same configuration details for both development and production but it's best to make separate projects.
 
 ```
-// SAMPLE CONFIG .env.dev, you should put the actual config details found on your project settings
+// Create a file name .env.dev, and copy the following config:
 
-FIREBASE_API_KEY=AIzaKJgkjhSdfSgkjhdkKJdkjowf
-FIREBASE_AUTH_DOMAIN=yourauthdomin.firebaseapp.com
-FIREBASE_DB_URL=https://yourdburl.firebaseio.com
-FIREBASE_PROJECT_ID=yourproject-id
-FIREBASE_STORAGE_BUCKET=yourstoragebucket.appspot.com
-FIREBASE_MSG_SENDER_ID=43597918523958
-FIREBASE_APP_ID=234598789798798fg3-034
+FIREBASE_API_KEY=AIzaSyBp0rtKDgRsxxa0sgRb68aP9PJ-67KYL6c
+FIREBASE_AUTH_DOMAIN=web-dev-site-133c6.firebaseapp.com
+FIREBASE_DB_URL=https://web-dev-site-133c6-default-rtdb.asia-southeast1.firebasedatabase.app
+FIREBASE_PROJECT_ID=web-dev-site-133c6
+FIREBASE_STORAGE_BUCKET=web-dev-site-133c6.appspot.com
+FIREBASE_MSG_SENDER_ID=763294262927
+FIREBASE_APP_ID=1:763294262927:web:afd7f1f06660147c88b2f
 
 ``` 
 
@@ -50,10 +49,12 @@ $ npm run build
 ```
 
 ## How to add products or perform CRUD operations for Admin
-1. Navigate to your site to `/signup`
-2. Create an account for yourself
-3. Go to your firestore collection `users collection` and edit the account you've just created. Change the role from `USER` to `ADMIN`.
-4. Reload or sigin again to see the changes. 
+1. Navigate to your site to `/signin`
+2. Signin with following credentials:
+  email: admin@gmail.com
+  password: Admin123
+4. You can add more products now
+ 
 
 **Firebase Admin to be integrated soon**
 
