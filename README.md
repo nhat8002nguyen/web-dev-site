@@ -36,7 +36,16 @@ FIREBASE_APP_ID=1:763294262927:web:afd7f1f06660147c88b2f
 ```sh 
 $ npm run dev-server
 ```
-
+### 4. (optional) if this error occurs
+Error: Node Sass does not yet support your current environment: Windows 64-bit with false
+```sh
+$ npm uninstall node-sass
+$ npm install node-sass
+```
+Then re-run app:
+```sh
+$ npm run dev-server
+```
 ---
 
 ## Build the project
