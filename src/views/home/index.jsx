@@ -19,7 +19,7 @@ const Home = () => {
     fetchFeaturedProducts,
     isLoading: isLoadingFeatured,
     error: errorFeatured
-  } = useFeaturedProducts(6);
+  } = useFeaturedProducts(3);
   const {
     recommendedProducts,
     fetchRecommendedProducts,
@@ -51,8 +51,11 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Featured Products</h1>
-            <Link to={FEATURED_PRODUCTS}>See All</Link>
+						<h1>New Arrivals</h1>
+						<p >
+							Some of our customers say that they trust us and buy out product without any
+							hesitation because they beleive us and always happy to buy our product.
+						</p>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
             <MessageDisplay
@@ -67,24 +70,34 @@ const Home = () => {
             />
           )}
         </div>
-        <div className="display">
-          <div className="display-header">
-            <h1>Recommended Products</h1>
-            <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
-          </div>
-          {(errorRecommended && !isLoadingRecommended) ? (
-            <MessageDisplay
-              message={errorRecommended}
-              action={fetchRecommendedProducts}
-              buttonLabel="Try Again"
-            />
-          ) : (
-            <ProductShowcaseGrid
-              products={recommendedProducts}
-              skeletonCount={6}
-            />
-          )}
-        </div>
+				<div className="display">
+					<div className="ads">
+						<div className="ads-images">
+							<div className="ads-image1">
+								<img src="images/ads-image1.png" alt=""/>
+							</div>
+							<div className="ads-image2">
+								<img src="images/ads-image2.png" alt=""/>
+							</div>
+						</div>
+						<div className="ads-content">
+							<h3>Prodide the best</h3>
+							<h2>Furniture For You</h2>
+							<p>
+								Modern furniture refers to furniture produced from the late 19th
+								century through the present that is influenced by modernism. Post-World War II 
+								ideals of cutting excess, commodification, and practicality of materials in design 
+								heavily influenced the aesthetic of the furniture.
+							</p>
+							<p>
+								It was a tremendous departure from all furniture design that had gone
+								before it. Ther was an opposition to the decorative arts, which included Art 
+								Nouveau, Neoclassical, and Victorian styles.
+							</p>
+						</div>
+					</div>
+				</div>
+        
       </div>
     </main>
   );

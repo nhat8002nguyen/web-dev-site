@@ -1,5 +1,6 @@
 import { Preloader } from 'components/common';
 import 'normalize.css/normalize.css';
+import 'antd/dist/antd.css';
 import React from 'react';
 import { render } from 'react-dom';
 import 'react-phone-input-2/lib/style.css';
