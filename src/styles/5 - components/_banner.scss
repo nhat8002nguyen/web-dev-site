@@ -49,3 +49,37 @@
         transform: translateX(5rem)
     }
 }
+
+.ads-banner {
+	height: 30rem;
+}
+
+.ads-images {
+	flex: 2;
+	display: flex;
+}
+
+.ads-img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.ads-chair {
+	flex: 2;
+}
+
+.ads-salon {
+	flex: 1;
+}
+
+
+.ads-content {
+	flex: 1
+}
