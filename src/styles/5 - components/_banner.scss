@@ -10,6 +10,11 @@
         height: auto;
         flex-direction: column;
     }
+
+		@include tablet {
+			height: auto;
+			flex-direction: column;
+		}
 }
 
 .banner-desc {

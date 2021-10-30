@@ -33,31 +33,26 @@ const Home = () => {
   return (
     <main className="content">
       <div className="home">
-        <div className="banner">
+        <div className="banner" style={{backgroundColor: "white"}}>
           <div className="banner-desc">
-            <h1 className="text-thin">
-              <strong>See</strong>
-              &nbsp;everything with&nbsp;
-              <strong>Clarity</strong>
+						<h2 className="app-font-family">BỘ MỚI 2021</h2>
+            <h1 className="app-font-family">
+							Mấu nội thất ghế gỗ
             </h1>
-            <p>
-              Buying eyewear should leave you happy and good-looking, with money in your pocket.
-              Glasses, sunglasses, and contacts—we’ve got your eyes covered.
-            </p>
             <br />
             <Link to={SHOP} className="button">
-              Shop Now &nbsp;
+              Mua sắm ngay&nbsp;
               <ArrowRightOutlined />
             </Link>
           </div>
-          <div className="banner-img"><img src={bannerImg} alt="" /></div>
+          <div className="banner-img"><img src="https://cdn.shopify.com/s/files/1/0657/8313/products/CH07_Shell_Chair-001.jpg?v=1571259704" alt="" /></div>
         </div>
         <div className="display">
           <div className="display-header">
-						<h1>New Arrivals</h1>
+						<h1 className="app-font-family">Hàng mới</h1>
 						<p >
-							Some of our customers say that they trust us and buy out product without any
-							hesitation because they beleive us and always happy to buy our product.
+							Một số khách hàng của chúng tôi nói rằng họ tin tưởng chúng tôi và mua sản phẩm mà không hề do dự vì họ 
+							tin tưởng chúng tôi và luôn hài lòng khi mua sản phẩm của chúng tôi.
 						</p>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
@@ -80,31 +75,29 @@ const Home = () => {
 						</div>
 					</div>
 					<div className="banner-desc">
-						<h3 style={{marginBottom: 0}}>Prodide the best</h3>
-						<h2><strong>Furniture For You</strong></h2>
+						<h3 style={{marginBottom: 0}} className="app-font-family">Cung cấp tốt nhất</h3>
+						<h2 className="app-font-family"><strong>Nội thất cho bạn</strong></h2>
 						<p>
-							Modern furniture refers to furniture produced from the late 19th
-							century through the present that is influenced by modernism. Post-World War II 
-							ideals of cutting excess, commodification, and practicality of materials in design 
-							heavily influenced the aesthetic of the furniture.
+							Nội thất hiện đại là đồ nội thất được sản xuất từ cuối thế kỷ 19 đến nay chịu ảnh hưởng của chủ nghĩa hiện 
+							đại. Những lý tưởng sau Thế chiến II về việc cắt giảm dư thừa, hàng hóa và tính thực dụng của vật liệu 
+							trong thiết kế đã ảnh hưởng rất nhiều đến thẩm mỹ của đồ nội thất.
 						</p>
 						<p>
-							It was a tremendous departure from all furniture design that had gone
-							before it. Ther was an opposition to the decorative arts, which included Art 
-							Nouveau, Neoclassical, and Victorian styles.
+							Đó là một sự khởi đầu to lớn so với tất cả các thiết kế đồ nội thất trước đó. Có một sự phản đối đối với 
+							nghệ thuật trang trí, bao gồm các phong cách Tân nghệ thuật, Tân cổ điển và Victoria.
 						</p>
 						<Link to="#" className="button">
-              Read more &nbsp;
+              Đọc thêm&nbsp;
               <ArrowRightOutlined />
             </Link>
 					</div>
 				</div>
 				<div className="display">
 					<div className="display-header">
-						<h1>Latest Blog</h1>
+						<h1 className="app-font-family">Blog mới nhất</h1>
 						<p>
-							Some of our customers say that they trust us and buy our product without any 
-							hesitation because they believe us and always happy to buy our product.
+							Một số khách hàng của chúng tôi nói rằng họ tin tưởng chúng tôi và mua sản phẩm của chúng tôi mà không hề 
+							do dự vì họ tin chúng tôi và luôn hài lòng khi mua sản phẩm của chúng tôi.
 						</p>
 					</div>
 					<HomeBlogShowCase />

@@ -36,6 +36,7 @@
 	h3, h1, p {
 		color: white;
 		margin: 0;
+		text-align: center;
 	}
 
 	h3 {
@@ -51,6 +52,14 @@
 		font-size: 0.7em;
 		width: 50%;
 		text-align: center;
+		
+		@include tablet {
+			width: 100%;
+		}
+	}
+
+	@include tablet {
+		padding: 3rem;
 	}
 }
 
@@ -90,5 +99,15 @@
 			background-color: white;
 			color: red;
 		}
+
+		@include tablet {
+			padding: 10px;
+		}
+	}
+
+	@include tablet {
+		flex-direction: column;
+		margin-top: 2rem;
+		gap: 1rem;
 	}
 }
