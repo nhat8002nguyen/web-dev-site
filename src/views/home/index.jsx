@@ -10,7 +10,7 @@ import adsChair from 'images/ads-chair.png';
 import adsSalon from 'images/ads-salon.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HomeBlogShowCase from 'components/home/HomeBlogShowCase';
+import {HomeBlogShowCase, SubscribeView} from 'components/home';
 
 
 const Home = () => {
@@ -108,6 +108,7 @@ const Home = () => {
 						</p>
 					</div>
 					<HomeBlogShowCase />
+					<SubscribeView />
 				</div>
         
       </div>

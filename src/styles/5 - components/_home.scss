@@ -11,3 +11,84 @@
     width: 100%;
 }
 
+.blog-display {
+	max-height: 50rem;
+}
+
+.blog-link {
+	cursor: pointer;
+
+	&:hover {
+		color: rgb(248, 53, 53);
+	}
+}
+
+.subscribe-view {
+	margin: 0;
+	margin-top: 10rem;
+	padding: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #222222;
+
+	h3, h1, p {
+		color: white;
+		margin: 0;
+	}
+
+	h3 {
+
+		span {
+			color: red;
+			font-weight: 600;
+			font-size: 1em;
+		}
+	}
+	
+	p {
+		font-size: 0.7em;
+		width: 50%;
+		text-align: center;
+	}
+}
+
+.subscribe-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	height: 4rem;
+
+	input[type=email] {
+		flex: 3;
+		border: 1px solid white;
+		border-radius: 20px;
+		color: white;
+		height: 3.5rem;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	#subscribe-btn {
+		flex: 1;
+		height: 3.5rem;
+		background-color: red;
+		color: white;
+		border-radius: 20px;
+		opacity: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.8em;
+
+		&:hover {
+			cursor: pointer;
+			background-color: white;
+			color: red;
+		}
+	}
+}
