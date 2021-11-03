@@ -566,3 +566,14 @@
 		margin-bottom: 0;
   }
 }
+
+.products-animation {
+	position: relative;
+	animation-name: products-show-case;
+	animation-duration: 1s;
+}
+
+@keyframes products-show-case {
+	0% {opacity: 0; transform: scale(0.8)};
+	100% {opacity: 1; transform: scale(1)};
+}

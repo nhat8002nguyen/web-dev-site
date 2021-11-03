@@ -10,7 +10,7 @@ export default function BenefitItem(props) {
 			<BenefitIcon className="benefit-icon" size={30} />
 			<div className="benefit-text">
 				<h3 className="app-font-family">{title?.length > 30 ? title.substring(0, 30) : title}</h3>
-				<p className="app-font-family">{description?.length > 50 ? description.substring(0, 50) : description}</p>
+				<p className="app-font-family">{description?.length > 100 ? description.substring(0, 100)+"..." : description}</p>
 			</div>
 		</div>
 	)
