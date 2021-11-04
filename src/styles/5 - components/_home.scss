@@ -112,24 +112,4 @@
 	}
 }
 
-.title-animation {
-	position: relative;
-	animation-name: title-show-case;
-	animation-duration: 1s;
-}
 
-@keyframes title-show-case {
-	0% {left: 50rem};
-	100% {left: 0};
-}
-
-.desc-animation {
-	position: relative;
-	animation-name: desc-show-case;
-	animation-duration: 1s;
-}
-
-@keyframes desc-show-case {
-	0% {right: 50rem};
-	100% {right: 0};
-}

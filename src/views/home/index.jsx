@@ -18,6 +18,9 @@ const Home = () => {
   useDocumentTitle('Salinaka | Home');
   useScrollTop();
 
+	const {ref: bannerRef, inView: bannerInView} = useInView({threshold:0});
+	const {ref: adsRef, inView: adsInView} = useInView({threshold:0});
+
 	const [
 		{titleRef: productsTitleRef, titleInView: productsTitleInView},
 		{descRef: productsDescRef, descInView: productDescInView},
@@ -28,12 +31,6 @@ const Home = () => {
 		{titleRef: blogsTitleRef, titleInView: blogsTitleInView},
 		{descRef: blogsDescRef, descInView: blogsDescInView},
 		{showCaseRef: blogsShowCaseRef, showCaseInView: blogsShowCaseInView}
-	] = useHomeShowCaseInView();
-
-	const [
-		{titleRef: adsTitleRef, titleInView: adsTitleInView},
-		{descRef: adsImageRef, descInView: adsImageInView},
-		{showCaseRef: adsButtonRef, showCaseInView: adsButtonInView}
 	] = useHomeShowCaseInView();
 
   const {
@@ -53,13 +50,13 @@ const Home = () => {
     <main className="content">
       <div className="home">
         <div className="banner" style={{backgroundColor: "white"}}>
-          <div className="banner-desc">
-						<h2 id="bo-moi-2021" className="app-font-family">BỘ MỚI 2021</h2>
-            <h1 id="mau-ghe-go" className="app-font-family">
+          <div className="banner-desc" ref={bannerRef}>
+						<h2 id={bannerInView ? "bo-moi-2021" : ""} className="app-font-family">BỘ MỚI 2021</h2>
+            <h1 id={bannerInView ? "mau-ghe-go" : ""} className="app-font-family">
 							Mấu nội thất ghế gỗ
             </h1>
             <br />
-            <Link to={SHOP} className="button" id="mua-sam-ngay">
+            <Link to={SHOP} className="button" id={bannerInView ? "mua-sam-ngay" : ""}>
               Mua sắm ngay&nbsp;
               <ArrowRightOutlined />
             </Link>
@@ -91,13 +88,13 @@ const Home = () => {
             />
           )}
         </div>
-				<div className="banner">
+				<div className={`banner ${adsInView ? "products-animation" : ""}`}>
 					<div className={`ads-images`}>
 						<div className="ads-img ads-chair">
 							<img src="https://shop.static.ingka.ikea.com/revamp/desk-chairs-for-home_20653.jpg" all=""></img>
 						</div>
 					</div>
-					<div className="banner-desc">
+					<div ref={adsRef} className="banner-desc">
 						<div>
 							<h3 style={{marginBottom: 0}} className="app-font-family">Cung cấp tốt nhất</h3>
 							<h2 className="app-font-family"><strong>Nội thất cho bạn</strong></h2>
@@ -128,7 +125,6 @@ const Home = () => {
 					<HomeBlogShowCase ref={blogsShowCaseRef} inView={blogsShowCaseInView}/>
 					<SubscribeView />
 				</div>
-        
       </div>
     </main>
   );

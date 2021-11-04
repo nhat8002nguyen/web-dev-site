@@ -47,3 +47,36 @@
         transform: translateY(0);
     }
 }
+
+.title-animation {
+	position: relative;
+	animation-name: title-show-case;
+	animation-duration: 1s;
+}
+
+@keyframes title-show-case {
+	0% {left: 50rem};
+	100% {left: 0};
+}
+
+.desc-animation {
+	position: relative;
+	animation-name: desc-show-case;
+	animation-duration: 1s;
+}
+
+@keyframes desc-show-case {
+	0% {right: 50rem};
+	100% {right: 0};
+}
+
+.products-animation {
+	position: relative;
+	animation-name: products-show-case;
+	animation-duration: 1s;
+}
+
+@keyframes products-show-case {
+	0% {opacity: 0; transform: scale(0.8)};
+	100% {opacity: 1; transform: scale(1)};
+}

@@ -100,3 +100,10 @@
     font-size: inherit;
   }
 }
+
+.scroll-top-button {
+	position: fixed;
+	z-index: 10;
+	bottom: 4rem;
+	right: 4rem;
+}
