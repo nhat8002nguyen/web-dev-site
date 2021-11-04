@@ -51,7 +51,7 @@
 .title-animation {
 	position: relative;
 	animation-name: title-show-case;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 }
 
 @keyframes title-show-case {
@@ -62,7 +62,7 @@
 .desc-animation {
 	position: relative;
 	animation-name: desc-show-case;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 }
 
 @keyframes desc-show-case {
@@ -73,7 +73,7 @@
 .products-animation {
 	position: relative;
 	animation-name: products-show-case;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 }
 
 @keyframes products-show-case {
