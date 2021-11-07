@@ -1,0 +1,26 @@
+.shop-page {
+	display: grid;
+	grid-template-rows: auto;
+}
+
+.shop-header {
+	height: 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.shop-hear h1,p {
+	margin: 0px;
+}
+
+.shop-container {
+	display: grid;
+	grid-template-columns: 25% 75%;
+	margin-top: 5rem;
+}
+
+.shop-categories-wrapper {
+
+}

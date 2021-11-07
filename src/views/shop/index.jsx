@@ -17,13 +17,23 @@ const Shop = () => {
   }), shallowEqual);
 
   return (
-    <main className="content">
-      <section className="product-list-wrapper">
-        <AppliedFilters filteredProductsCount={store.filteredProducts.length} />
-        <ProductList {...store}>
-          <ProductGrid products={store.filteredProducts} />
-        </ProductList>
-      </section>
+    <main className="content shop-page">
+			<section className="shop-header background-header">
+				<h1 className="text-white">Chair</h1>
+				<p className="text-white text-thin">Home - Chair</p>
+			</section>
+			<section className="shop-container">
+				<section className="shop-categories-wrapper">
+					<h1>Categories</h1>
+				</section>
+				<section className="product-list-wrapper">
+					<AppliedFilters filteredProductsCount={store.filteredProducts.length} />
+					<ProductList {...store}>
+						<ProductGrid products={store.filteredProducts} />
+					</ProductList>
+				</section>
+			</section>
+			
     </main>
   );
 };
