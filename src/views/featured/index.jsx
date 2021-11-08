@@ -1,8 +1,10 @@
-import { MessageDisplay } from 'components/common';
-import { ProductShowcaseGrid } from 'components/product';
+import CategorySection from 'components/shop/categorySection';
 import { useDocumentTitle, useFeaturedProducts, useScrollTop } from 'hooks';
-import bannerImg from 'images/banner-guy.png';
+import { AppliedFilters, ProductGrid, ProductList } from 'components/product';
 import React from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
+import { selectFilter } from 'selectors/selector';
+import { shopData } from '../../dummyData';
 
 const FeaturedProducts = () => {
   useDocumentTitle('Featured Products | Salinaka');
@@ -15,34 +17,30 @@ const FeaturedProducts = () => {
     error
   } = useFeaturedProducts();
 
+	const store = useSelector((state) => ({
+    filteredProducts: selectFilter(state.products.items, state.filter),
+    products: state.products,
+    requestStatus: state.app.requestStatus,
+    isLoading: state.app.loading
+  }), shallowEqual);
+
   return (
-    <main className="content">
-      <div className="featured">
-        <div className="banner">
-          <div className="banner-desc">
-            <h1>Featured Products</h1>
-          </div>
-          <div className="banner-img">
-            <img src={bannerImg} alt="" />
-          </div>
-        </div>
-        <div className="display">
-          <div className="product-display-grid">
-            {(error && !isLoading) ? (
-              <MessageDisplay
-                message={error}
-                action={fetchFeaturedProducts}
-                buttonLabel="Try Again"
-              />
-            ) : (
-              <ProductShowcaseGrid
-                products={featuredProducts}
-                skeletonCount={6}
-              />
-            )}
-          </div>
-        </div>
-      </div>
+    <main className="content shop-page">
+			<section className="shop-header background-header">
+				<h1 className="text-white">Chair</h1>
+				<p className="text-white text-thin">Home - Chair</p>
+			</section>
+			<section className="shop-container">
+				<section className="shop-categories-wrapper">
+					{shopData?.productDivisions?.map(item => <CategorySection key={item.id} {...item}/>)}
+				</section>
+				<section className="product-list-wrapper">
+					<AppliedFilters filteredProductsCount={store.filteredProducts.length} />
+					<ProductList {...store}>
+						<ProductGrid products={featuredProducts} />
+					</ProductList>
+				</section>
+			</section>
     </main>
   );
 };

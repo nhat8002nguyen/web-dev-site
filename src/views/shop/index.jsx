@@ -11,6 +11,8 @@ const Shop = () => {
   useDocumentTitle('Shop | Salinaka');
   useScrollTop();
 
+	
+
   const store = useSelector((state) => ({
     filteredProducts: selectFilter(state.products.items, state.filter),
     products: state.products,
