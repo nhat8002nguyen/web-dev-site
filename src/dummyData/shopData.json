@@ -1,0 +1,44 @@
+{
+	"productDivisions": [
+		{
+			"id": 1,
+			"name": "Category",
+			"types": [
+				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
+				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
+				{ "id": 3, "name": "Recommended", "quantity": 12, "pathName": "chair" }, 
+				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
+			]
+		},
+		{
+			"id": 2,
+			"name": "Brand",
+			"types": [
+				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" }, 
+				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
+				{ "id": 3, "name": "Home page", "quantity": 12, "pathName": "chair" },
+				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
+			]
+		},
+		{
+			"id": 3,
+			"name": "Product Type",
+			"types": [
+				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
+				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
+				{ "id": 3, "name": "Home page", "quantity": 12, "pathName": "chair" },
+				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
+			]
+		},
+		{
+			"id": 4,
+			"name": "Color",
+			"types": [
+				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
+				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
+				{ "id": 3, "name": "Home page", "quantity": 12, "pathName": "chair" },
+				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
+			]
+		}
+	] 
+}

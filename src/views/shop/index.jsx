@@ -1,9 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppliedFilters, ProductGrid, ProductList } from 'components/product';
+import CategorySection from 'components/shop/categorySection';
 import { useDocumentTitle, useScrollTop } from 'hooks';
 import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { selectFilter } from 'selectors/selector';
+import { shopData } from '../../dummyData';
 
 const Shop = () => {
   useDocumentTitle('Shop | Salinaka');
@@ -24,7 +26,7 @@ const Shop = () => {
 			</section>
 			<section className="shop-container">
 				<section className="shop-categories-wrapper">
-					<h1>Categories</h1>
+					{shopData?.productDivisions?.map(item => <CategorySection key={item.id} {...item}/>)}
 				</section>
 				<section className="product-list-wrapper">
 					<AppliedFilters filteredProductsCount={store.filteredProducts.length} />
