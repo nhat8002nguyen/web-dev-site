@@ -4,10 +4,11 @@
 			"id": 1,
 			"name": "Category",
 			"types": [
-				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
 				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "featured" },
 				{ "id": 3, "name": "Recommended", "quantity": 12, "pathName": "recommended" }, 
-				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
+				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
+				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "sofa" },
+				{ "id": 5, "name": "Lamp", "quantity": 10, "pathName": "lamp" }
 			]
 		},
 		{
@@ -18,26 +19,6 @@
 				{ "id": 2, "name": "Betsin Maalat", "quantity": 12, "pathName": "betsin" },
 				{ "id": 3, "name": "Black Kibal", "quantity": 12, "pathName": "black kibal" },
 				{ "id": 4, "name": "Sexbomb", "quantity": 12, "pathName": "sexbomb" }
-			]
-		},
-		{
-			"id": 3,
-			"name": "Product Type",
-			"types": [
-				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
-				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
-				{ "id": 3, "name": "Home page", "quantity": 12, "pathName": "chair" },
-				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
-			]
-		},
-		{
-			"id": 4,
-			"name": "Color",
-			"types": [
-				{ "id": 1, "name": "Chair", "quantity": 12, "pathName": "chair" },
-				{ "id": 2, "name": "Featured", "quantity": 12, "pathName": "chair" },
-				{ "id": 3, "name": "Home page", "quantity": 12, "pathName": "chair" },
-				{ "id": 4, "name": "Sofa", "quantity": 12, "pathName": "chair" }
 			]
 		}
 	] 

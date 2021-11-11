@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { SHOP } from 'constants/routes';
 import { useSelector, useDispatch } from 'react-redux';
-import { applyFilter } from 'redux/actions/filterActions';
+import { applyFilter, resetFilter } from 'redux/actions/filterActions';
 
 export default function CategorySection(props) {
 	const history = useHistory();
@@ -14,11 +14,13 @@ export default function CategorySection(props) {
   }));
 
 	const handleItemClick = (type) => {
-		const name = type.pathName;
-		if (name === "featured" || name === "recommended") {
-			history.replace(`/shop/${name}`);
+		const path = type.pathName;
+		if (path === "featured" || path === "recommended" || name !== "Brand") {
+			history.push(`/shop/${path}`);
+			dispatch(resetFilter());
 		} else {
-			dispatch(applyFilter({...filter, brand: name}));
+			history.replace("/shop");
+			dispatch(applyFilter({...filter, brand: path}));
 		}
 	}
 

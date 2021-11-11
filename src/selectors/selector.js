@@ -58,3 +58,7 @@ export const selectMin = (products) => {
 
   return Math.floor(low.price);
 };
+
+export const selectByKeyword = (products, keyword) => {
+	return products.filter(p => p.keywords.map(k => k.toLowerCase()).includes(keyword.toLowerCase()));
+}
