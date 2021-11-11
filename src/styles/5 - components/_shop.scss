@@ -19,6 +19,10 @@
 	display: grid;
 	grid-template-columns: 25% 75%;
 	margin-top: 5rem;
+
+	@include tablet {
+		grid-template-rows: auto;
+	}
 }
 
 .shop-categories-wrapper {

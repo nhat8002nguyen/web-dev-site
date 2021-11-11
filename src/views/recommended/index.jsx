@@ -30,7 +30,7 @@ const RecommendedProducts = () => {
   return (
     <main className="content shop-page">
 			<section className="shop-header background-header">
-				<h1 className="text-white">Chair</h1>
+				<h1 className="text-white">Recommended</h1>
 				<p className="text-white text-thin">Home - Chair</p>
 			</section>
 			<section className="shop-container">

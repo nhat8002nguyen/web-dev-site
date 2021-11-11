@@ -23,17 +23,27 @@ const Shop = () => {
     isLoading: state.app.loading
   }), shallowEqual);
 
-	const updateShopTitle = (path) => {
+	const updateShopTitleFrom = (path) => {
 		return path.lastIndexOf('/') > 0 
 			? `${path.substring(1, path.lastIndexOf('/'))} - ${path.substring(path.lastIndexOf('/')+1)}`
 			: path.substring(1);
 	}
 
+	const showCategoryNameFrom = (path) => {
+		return path.lastIndexOf('/') > 0
+			? capitallize(path.substring(path.lastIndexOf('/')+1))
+			: "Shop";
+	}
+
+	const capitallize = (s) => {
+		return s.slice(0,1).toUpperCase() + s.slice(1);
+	}
+
   return (
     <main className="content shop-page">
 			<section className="shop-header background-header">
-				<h1 className="text-white">Chair</h1>
-				<p className="text-white text-thin">{updateShopTitle(pathname)}</p>
+				<h1 className="text-white">{showCategoryNameFrom(pathname)}</h1>
+				<p className="text-white text-thin">{updateShopTitleFrom(pathname)}</p>
 			</section>
 			<section className="shop-container">
 				<section className="shop-categories-wrapper">
