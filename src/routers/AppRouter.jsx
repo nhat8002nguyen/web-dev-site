@@ -1,5 +1,6 @@
 import { Basket } from 'components/basket';
 import { Footer, Navigation } from 'components/common';
+import ScrollTopButton from 'components/common/ScrollTopButton';
 import * as ROUTES from 'constants/routes';
 import { createBrowserHistory } from 'history';
 import React from 'react';
@@ -13,8 +14,20 @@ import PublicRoute from './PublicRoute';
 // v5.0 breaks navigation
 export const history = createBrowserHistory();
 
-const AppRouter = () => (
-  <Router history={history}>
+const AppRouter = () => {
+	 const [showButton, setShowButton] = React.useState(false);
+
+		React.useEffect(() => {
+			window.addEventListener("scroll", () => {
+				if (window.pageYOffset > 500) {
+					setShowButton(true);
+				} else {
+					setShowButton(false);
+				}
+			});
+		}, []);
+
+	return <Router history={history}>
     <>
       <Navigation />
       <Basket />
@@ -102,9 +115,10 @@ const AppRouter = () => (
         />
         <PublicRoute component={view.PageNotFound} />
       </Switch>
+			{showButton && <ScrollTopButton />}
       <Footer />
     </>
   </Router>
-);
+}
 
 export default AppRouter;

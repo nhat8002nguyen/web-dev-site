@@ -3,6 +3,7 @@ import PropType from 'prop-types';
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import { useHistory } from 'react-router-dom';
+import ProductRating from './ProductRating';
 
 const ProductFeatured = ({ product }) => {
   const history = useHistory();
@@ -27,6 +28,10 @@ const ProductFeatured = ({ product }) => {
           <h2>{product.name || <Skeleton width={80} />}</h2>
           <p className="text-subtle text-italic">
             {product.brand || <Skeleton width={40} />}
+          </p>
+					<ProductRating disabled={true} defaultValue={3} />
+          <p className="text-subtle text-italic">
+            {product.price + " VND" || <Skeleton width={40} />}
           </p>
         </div>
       </div>

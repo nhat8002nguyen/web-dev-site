@@ -10,6 +10,11 @@
         height: auto;
         flex-direction: column;
     }
+
+		@include tablet {
+			height: auto;
+			flex-direction: column;
+		}
 }
 
 .banner-desc {
@@ -48,4 +53,70 @@
         object-fit: cover;
         transform: translateX(5rem)
     }
+}
+
+.ads-banner {
+	height: 30rem;
+}
+
+.ads-images {
+	flex: 2;
+	display: flex;
+}
+
+.ads-img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.ads-chair {
+	flex: 2;
+}
+
+.ads-salon {
+	flex: 1;
+}
+
+.ads-content {
+	flex: 1
+}
+
+#bo-moi-2021 {
+	position: relative;
+	animation-name: bo-moi-2021;
+	animation-duration: 1s;
+}
+
+@keyframes bo-moi-2021 {
+	0% {bottom: 50rem};
+	100% {bottom: 0rem}
+}
+
+#mau-ghe-go {
+	position: relative;
+	animation-name: mau-ghe-go;
+	animation-duration: 1s;
+}
+
+@keyframes mau-ghe-go {
+	0% {transform: scale(0)};
+	100% {transform: scale(1)};
+}
+
+#mua-sam-ngay {
+	position: relative;
+	animation-name: mua-sam-ngay;
+	animation-duration: 1s;
+}
+
+@keyframes mua-sam-ngay {
+	0% {right: 50rem; transform: scale(0); opacity: 0};
+	100% {right: 0; transform: scale(1)};
 }
