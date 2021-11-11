@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
     <main className="content shop-page">
 			<section className="shop-header background-header">
 				<h1 className="text-white">Featured</h1>
-				<p className="text-white text-thin">Home - Chair</p>
+				<p className="text-white text-thin">Shop - Featured</p>
 			</section>
 			<section className="shop-container">
 				<section className="shop-categories-wrapper">
