@@ -31,7 +31,7 @@ const RecommendedProducts = () => {
     <main className="content shop-page">
 			<section className="shop-header background-header">
 				<h1 className="text-white">Recommended</h1>
-				<p className="text-white text-thin">Home - Chair</p>
+				<p className="text-white text-thin">Shop - Recommended</p>
 			</section>
 			<section className="shop-container">
 				<section className="shop-categories-wrapper">
