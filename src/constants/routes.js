@@ -1,7 +1,8 @@
 export const HOME = '/';
 export const SHOP = '/shop';
-export const FEATURED_PRODUCTS = '/featured';
-export const RECOMMENDED_PRODUCTS = '/recommended';
+export const KEYWORDED_SHOP = '/shop/:keyword';
+export const FEATURED_PRODUCTS = '/shop/featured';
+export const RECOMMENDED_PRODUCTS = '/shop/recommended';
 export const ACCOUNT = '/account';
 export const ACCOUNT_EDIT = '/account/edit';
 export const ADMIN_DASHBOARD = '/admin/dashboard';

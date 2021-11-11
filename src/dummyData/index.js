@@ -1,0 +1,1 @@
+export {default as shopData } from './shopData.json';

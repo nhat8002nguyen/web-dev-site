@@ -1,8 +1,13 @@
+import React from 'react';
 import { MessageDisplay } from 'components/common';
 import { ProductShowcaseGrid } from 'components/product';
 import { useDocumentTitle, useRecommendedProducts, useScrollTop } from 'hooks';
 import bannerImg from 'images/banner-girl-1.png';
-import React from 'react';
+import CategorySection from 'components/shop/categorySection';
+import { AppliedFilters, ProductGrid, ProductList } from 'components/product';
+import { shallowEqual, useSelector } from 'react-redux';
+import { selectFilter } from 'selectors/selector';
+import { shopData } from '../../dummyData';
 
 const RecommendedProducts = () => {
   useDocumentTitle('Recommended Products | Salinaka');
@@ -15,34 +20,30 @@ const RecommendedProducts = () => {
     error
   } = useRecommendedProducts();
 
+	const store = useSelector((state) => ({
+    filteredProducts: selectFilter(state.products.items, state.filter),
+    products: state.products,
+    requestStatus: state.app.requestStatus,
+    isLoading: state.app.loading
+  }), shallowEqual);
+
   return (
-    <main className="content">
-      <div className="featured">
-        <div className="banner">
-          <div className="banner-desc">
-            <h1>Recommended Products</h1>
-          </div>
-          <div className="banner-img">
-            <img src={bannerImg} alt="" />
-          </div>
-        </div>
-        <div className="display">
-          <div className="product-display-grid">
-            {(error && !isLoading) ? (
-              <MessageDisplay
-                message={error}
-                action={fetchRecommendedProducts}
-                buttonLabel="Try Again"
-              />
-            ) : (
-              <ProductShowcaseGrid
-                products={recommendedProducts}
-                skeletonCount={6}
-              />
-            )}
-          </div>
-        </div>
-      </div>
+    <main className="content shop-page">
+			<section className="shop-header background-header">
+				<h1 className="text-white">Recommended</h1>
+				<p className="text-white text-thin">Home - Chair</p>
+			</section>
+			<section className="shop-container">
+				<section className="shop-categories-wrapper">
+					{shopData?.productDivisions?.map(item => <CategorySection key={item.id} {...item}/>)}
+				</section>
+				<section className="product-list-wrapper">
+					<AppliedFilters filteredProductsCount={store.filteredProducts.length} />
+					<ProductList {...store}>
+						<ProductGrid products={recommendedProducts} />
+					</ProductList>
+				</section>
+			</section>
     </main>
   );
 };
