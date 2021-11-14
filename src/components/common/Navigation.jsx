@@ -53,7 +53,7 @@ const Navigation = () => {
     ROUTE.SIGNUP,
     ROUTE.FORGOT_PASSWORD
   ];
-
+	console.log("run");
   if (store.user && store.user.role === 'ADMIN') {
     return null;
   } if (window.screen.width <= 800) {
