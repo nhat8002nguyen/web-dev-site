@@ -48,6 +48,11 @@ const AppRouter = () => {
           path={ROUTES.SHOP}
         />
         <Route
+          component={view.Contact}
+          exact
+          path={ROUTES.CONTACT}
+        />
+        <Route
           component={view.FeaturedProducts}
           exact
           path={ROUTES.FEATURED_PRODUCTS}
