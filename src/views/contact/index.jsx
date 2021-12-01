@@ -1,27 +1,26 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import firebaseDB from "./firebase";
 import "./contact.scss";
 import 'bootstrap/dist/css/bootstrap.css';
 import { number } from "prop-types";
-// import 'bootstrap/dist/js/bootstrap.js';
 function Contact() {
   const [state, setState] = useState({
     name: "",
     email: "",
+    number: "",
     subject: "",
     message: "",
   });
-
-  const { name, email, subject, number, message } = state;
+  
+  const { name, email, number, subject, message } = state;
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !number || !subject || !message) {
       toast.error("Please provide value in each input field");
     } else {
       firebaseDB.child("contacts").push(state);
-      setState({ name: "", email: "", subject: "", message: "" });
+      setState({ name: "", email: "", number: "", subject: "", message: "" });
       toast.success("Form Submitted Successfully");
     }
   };
@@ -43,6 +42,7 @@ function Contact() {
                     <h3>Contact Form Title</h3>
                     <p>Contact Form Brief</p>
                     <form
+                      action = "connect_contact.php" method = "post" 
                       id="contactForm"
                       className="contactForm"
                       onSubmit={handleSubmit}
@@ -113,13 +113,6 @@ function Contact() {
                         </div>
                         <div className="col-12">
                           <button type="submit">Submit</button>
-                          {/* <div className="form-group">
-                            <input
-                              type="submit"
-                              value="Send Message"
-                              className="btn btn-primary"
-                            />
-                          </div> */}
                         </div>
                       </div>
                     </form>
