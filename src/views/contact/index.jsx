@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./contact.scss";
 import 'bootstrap/dist/css/bootstrap.css';
 import { number } from "prop-types";
+const axios = require('axios');
 function Contact() {
   const [state, setState] = useState({
     name: "",
@@ -19,17 +20,29 @@ function Contact() {
     if (!name || !email || !number || !subject || !message) {
       toast.error("Please provide value in each input field");
     } else {
-      firebaseDB.child("contacts").push(state);
+      axios.post('http://localhost/Ass_contactAPIs/api/information/create.php', {
+        name: name,
+        email: email,
+        number: number,
+        subject: subject,
+        message: message    
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
       setState({ name: "", email: "", number: "", subject: "", message: "" });
       toast.success("Form Submitted Successfully");
     }
   };
 
-  const handleInputChange = (e) => {
-    let { name, value } = e.target;
-    setState({ ...state, [name]: value });
-  };
-  return (
+    const handleInputChange = (e) => {
+      let { name, value } = e.target;
+      setState({ ...state, [name]: value });
+    };
+    return (
     <section className="contact-section">
       <div className="container">
         <ToastContainer position="top-center" />
@@ -42,7 +55,6 @@ function Contact() {
                     <h3>Contact Form Title</h3>
                     <p>Contact Form Brief</p>
                     <form
-                      action = "connect_contact.php" method = "post" 
                       id="contactForm"
                       className="contactForm"
                       onSubmit={handleSubmit}
