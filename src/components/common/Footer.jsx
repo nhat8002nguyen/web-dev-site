@@ -37,7 +37,8 @@ const Footer = () => {
 
   const visibleOnlyPath = [
     Route.HOME,
-    Route.SHOP
+    Route.SHOP,
+		Route.CONTACT
   ];
 
   return !visibleOnlyPath.includes(pathname) ? null : (

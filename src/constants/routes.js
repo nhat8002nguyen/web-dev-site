@@ -3,6 +3,7 @@ export const SHOP = '/shop';
 export const KEYWORDED_SHOP = '/shop/:keyword';
 export const FEATURED_PRODUCTS = '/shop/featured';
 export const RECOMMENDED_PRODUCTS = '/shop/recommended';
+export const CONTACT = '/contact';
 export const ACCOUNT = '/account';
 export const ACCOUNT_EDIT = '/account/edit';
 export const ADMIN_DASHBOARD = '/admin/dashboard';
