@@ -1,11 +1,6 @@
-# Salinaka | E-commerce react app
-Simple ecommerce react js app with firebase [typescript].
+# NVHTeam | E-commerce react app
 
-### [Live demo](https://salinaka-ecommerce.web.app/)
-
-![Salinaka screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny1.png)
-![Salinaka screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny2.png)
-![Salinaka screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny3.png)
+<img width="500" alt="Home" src="https://user-images.githubusercontent.com/58263449/144641955-8d10f57e-1090-4ab1-ada4-466d98ca5f8b.png">
 ![Salinaka screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny7.png)
 
 ## Run Locally
