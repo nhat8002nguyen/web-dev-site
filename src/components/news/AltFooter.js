@@ -1,7 +1,5 @@
-import * as Route from "constants/routes";
 import logo from "images/logo-full.png";
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { TwitterOutlined } from "@ant-design/icons";
 import BenefitItem from "components/home/BenefitItem";
 
@@ -35,17 +33,7 @@ const benifits = [
 ];
 
 const Footer = () => {
-  const { pathname } = useLocation();
-
-  const visibleOnlyPath = [
-    Route.HOME,
-    Route.SHOP,
-		Route.CONTACT,
-    Route.BLOGS_DETAIL,
-    Route.BLOGS,
-  ];
-
-  return !visibleOnlyPath.includes(pathname) ? null : (
+  return (
     <div>
       <div className="footer-benefits">
         {benifits.map((b) => (

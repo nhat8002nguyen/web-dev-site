@@ -2,6 +2,11 @@ export { default as EditAccount } from './account/edit_account';
 export { default as UserAccount } from './account/user_account';
 export { default as AddProduct } from './admin/add_product';
 export { default as Dashboard } from './admin/dashboard';
+export { default as News } from './admin/news';
+export { default as AddNews } from './admin/add_news';
+export { default as EditNews } from './admin/edit_news';
+export { default as ContactList } from './admin/contact';
+export { default as SeeContact } from './admin/see_contact';
 export { default as EditProduct } from './admin/edit_product';
 export { default as Products } from './admin/products';
 export { default as ForgotPassword } from './auth/forgot_password';
@@ -18,4 +23,5 @@ export { default as Contact } from './contact';
 export { default as Search } from './search';
 export { default as Shop } from './shop';
 export { default as ViewProduct } from './view_product';
-
+export { default as Blogs } from './blogs';
+export { default as Blogs_detail } from './blogs/blogDetails/index';
