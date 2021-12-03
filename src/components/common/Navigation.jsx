@@ -2,6 +2,7 @@
 import { FilterOutlined, ShoppingOutlined } from "@ant-design/icons";
 import * as ROUTE from "constants/routes";
 import logo from "images/logo-full.png";
+import appLogo from "images/app-logo.jpg";
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -69,7 +70,7 @@ const Navigation = () => {
     <nav className="navigation" ref={navbar}>
       <div className="logo">
         <Link onClick={onClickLink} to="/">
-          <img alt="Logo" src={logo} />
+          <img alt="Logo" src={appLogo} style={{width: 70}}/>
         </Link>
       </div>
       <ul className="navigation-menu-main">

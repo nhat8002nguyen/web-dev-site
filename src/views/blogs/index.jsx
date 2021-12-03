@@ -13,7 +13,7 @@ import { useHomeShowCaseInView } from "hooks";
 import { useInView } from "react-intersection-observer";
 
 const Blogs = () => {
-  useDocumentTitle("News | Salinaka");
+  useDocumentTitle("News | NVHTeam");
   useScrollTop();
   let [newsList, setNewsList] = useState([]);
   let [currentPage, setCurrentPage] = useState(1);

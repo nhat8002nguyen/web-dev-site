@@ -32,7 +32,7 @@ const SignUp = ({ history }) => {
   const dispatch = useDispatch();
 
   useScrollTop();
-  useDocumentTitle('Sign Up | Salinaka');
+  useDocumentTitle('Sign Up | NVHTeam');
 
   useEffect(() => () => {
     dispatch(setAuthStatus(null));
@@ -68,7 +68,7 @@ const SignUp = ({ history }) => {
           )}
           <div className={`auth ${authStatus?.message && (!authStatus?.success && 'input-error')}`}>
             <div className="auth-main">
-              <h3>Sign up to Salinaka</h3>
+              <h3>Sign up to NVHTeam</h3>
               <Formik
                 initialValues={{
                   fullname: '',
@@ -128,10 +128,10 @@ const SignUp = ({ history }) => {
                 )}
               </Formik>
             </div>
-            <div className="auth-divider">
+            {/* <div className="auth-divider">
               <h6>OR</h6>
             </div>
-            <SocialLogin isLoading={isAuthenticating} />
+            <SocialLogin isLoading={isAuthenticating} /> */}
           </div>
           <div className="auth-message">
             <span className="auth-info">

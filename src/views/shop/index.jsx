@@ -9,7 +9,7 @@ import { shopData } from "../../dummyData";
 import { useParams, useHistory } from "react-router-dom";
 
 const Shop = () => {
-  useDocumentTitle("Shop | Salinaka");
+  useDocumentTitle("Shop | NVHTeam");
   useScrollTop();
   const {
     location: { pathname },

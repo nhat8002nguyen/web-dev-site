@@ -15,7 +15,7 @@ import { useInView } from 'react-intersection-observer';
 
 
 const Home = () => {
-  useDocumentTitle('Salinaka | Home');
+  useDocumentTitle('NVHTeam | Home');
   useScrollTop();
 
 	const {ref: bannerRef, inView: bannerInView} = useInView({threshold:0});

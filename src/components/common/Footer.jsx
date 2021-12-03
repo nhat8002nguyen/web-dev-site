@@ -1,5 +1,6 @@
 import * as Route from "constants/routes";
 import logo from "images/logo-full.png";
+import appLogo from "images/app-logo.jpg";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { TwitterOutlined } from "@ant-design/icons";
@@ -59,7 +60,7 @@ const Footer = () => {
           </strong>
         </div>
         <div className="footer-col-2">
-          <img alt="Footer logo" className="footer-logo" src={logo} />
+          <img alt="Footer logo" className="footer-logo" src={appLogo} />
           <h5>
             &copy;&nbsp;
             {new Date().getFullYear()}
