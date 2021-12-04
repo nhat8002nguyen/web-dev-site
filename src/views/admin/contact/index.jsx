@@ -18,7 +18,10 @@ const ContactList = (props) => {
     contactService
       .getContactList()
       .then((res) => {
-        setContactList(res.data);
+        const contact1 = res.data.filter((contact) => {
+          return contact.name != "";
+        });
+        setContactList(contact1);
       })
       .catch((err) => {
         console.log(err);

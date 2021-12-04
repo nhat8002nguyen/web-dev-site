@@ -1,14 +1,14 @@
 /* eslint-disable indent */
-import { ImageLoader } from 'components/common';
-import { ACCOUNT_EDIT } from 'constants/routes';
-import { displayDate } from 'helpers/utils';
-import PropType from 'prop-types';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { ImageLoader } from "components/common";
+import { ACCOUNT_EDIT } from "constants/routes";
+import { displayDate } from "helpers/utils";
+import PropType from "prop-types";
+import React from "react";
+import { useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 const UserProfile = (props) => {
-  const profile = useSelector((state) => state.profile);
+  const profile = { ...props };
 
   return (
     <div className="user-profile">
@@ -70,8 +70,8 @@ const UserProfile = (props) => {
 
 UserProfile.propTypes = {
   history: PropType.shape({
-    push: PropType.func
-  }).isRequired
+    push: PropType.func,
+  }).isRequired,
 };
 
 export default withRouter(UserProfile);

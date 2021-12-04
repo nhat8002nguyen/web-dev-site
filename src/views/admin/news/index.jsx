@@ -20,8 +20,11 @@ const NewsList = (props) => {
     newsService
       .getNewsList()
       .then((res) => {
-        setNewsList(res.data);
-        console.log(res.data);
+        const newsList1 = res.data.filter((news) => {
+          return news.content != "";
+        });
+        // console.log(newsList1);
+        setNewsList(newsList1);
       })
       .catch((err) => {
         console.log(err);

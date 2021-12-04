@@ -52,7 +52,8 @@ const AppRouter = () => {
             path={ROUTES.RECOMMENDED_PRODUCTS}
           />
           <Route component={view.Shop} path={ROUTES.KEYWORDED_SHOP} />
-
+          <Route component={view.Contact} path={ROUTES.CONTACT} />
+        
           <Route component={view.Blogs} exact path={ROUTES.BLOGS} />
           <Route
             component={view.Blogs_detail}

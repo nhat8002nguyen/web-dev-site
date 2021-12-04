@@ -27,7 +27,7 @@ const Blogs = () => {
     newsService
       .getNewsList()
       .then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         setNewsList(result.data);
         setLoading(false);
       })

@@ -1,15 +1,18 @@
-import { ArrowLeftOutlined, CheckOutlined } from '@ant-design/icons';
-import { CHECKOUT_STEP_2 } from 'constants/routes';
-import { useFormikContext } from 'formik';
-import { displayMoney } from 'helpers/utils';
-import PropType from 'prop-types';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { setPaymentDetails } from 'redux/actions/checkoutActions';
+import { ArrowLeftOutlined, CheckOutlined } from "@ant-design/icons";
+import { CHECKOUT_STEP_2 } from "constants/routes";
+import { useFormikContext } from "formik";
+import { displayMoney } from "helpers/utils";
+import PropType from "prop-types";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { clearBasket } from "redux/actions/basketActions";
+import { setPaymentDetails } from "redux/actions/checkoutActions";
+import { setBasket } from "redux/actions/profileActions";
+import swal from "sweetalert";
 
 const Total = ({ isInternational, subtotal }) => {
-  const { values, submitForm } = useFormikContext();
+  // const { values, submitForm } = useFormikContext();
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -19,6 +22,31 @@ const Total = ({ isInternational, subtotal }) => {
 
     dispatch(setPaymentDetails({ ...rest })); // save payment details
     history.push(CHECKOUT_STEP_2);
+  };
+
+  const inBasket = useSelector((state) => {
+    return state.basket;
+  });
+  const user = useSelector((state) => {
+    return state.profile;
+  });
+
+  useEffect(() => {
+    const userBasket = user.basket.push(inBasket);
+
+    console.log(user);
+  });
+
+  const onConfirm = () => {
+    // displayActionMessage("Feature not ready yet :)", "info");
+    dispatch(setBasket(user));
+    dispatch(clearBasket());
+    swal({
+      title: "Success",
+      text: "Mua hàng thành công",
+      icon: "success",
+      button: "OK",
+    });
   };
 
   return (
@@ -37,18 +65,16 @@ const Total = ({ isInternational, subtotal }) => {
           type="button"
         >
           <ArrowLeftOutlined />
-          &nbsp;
-          Go Back
+          &nbsp; Go Back
         </button>
         <button
           className="button"
           disabled={false}
-          onClick={submitForm}
+          onClick={onConfirm}
           type="button"
         >
           <CheckOutlined />
-          &nbsp;
-          Confirm
+          &nbsp; Confirm
         </button>
       </div>
     </>
@@ -57,7 +83,7 @@ const Total = ({ isInternational, subtotal }) => {
 
 Total.propTypes = {
   isInternational: PropType.bool.isRequired,
-  subtotal: PropType.number.isRequired
+  subtotal: PropType.number.isRequired,
 };
 
 export default Total;
