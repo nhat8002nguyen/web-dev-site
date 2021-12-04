@@ -73,9 +73,9 @@ const Navigation = () => {
         </Link>
       </div>
       <ul className="navigation-menu-main">
-      <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.CONTACT}>Contact</NavLink></li>
       <li><NavLink activeClassName="navigation-menu-active" exact to={ROUTE.HOME}>Home</NavLink></li>
       <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>Shop</NavLink></li>
+      <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.CONTACT}>Contact</NavLink></li>
       <li><NavLink activeClassName="navigation-menu-active" to={ROUTE.BLOGS}>Blogs</NavLink></li>
       </ul>
       {(pathname.includes(ROUTE.SHOP) || pathname === ROUTE.SEARCH) && (

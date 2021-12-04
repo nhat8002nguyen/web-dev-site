@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./contact.scss";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import { number } from "prop-types";
-const axios = require('axios');
+const axios = require("axios");
 function Contact() {
   const [state, setState] = useState({
     name: "",
@@ -13,36 +13,37 @@ function Contact() {
     subject: "",
     message: "",
   });
-  
+
   const { name, email, number, subject, message } = state;
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !email || !number || !subject || !message) {
       toast.error("Please provide value in each input field");
     } else {
-      axios.post('http://localhost/Ass_contactAPIs/api/information/create.php', {
-        name: name,
-        email: email,
-        number: number,
-        subject: subject,
-        message: message    
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      axios
+        .post("http://localhost/php_rest_myblog/api/information/create.php", {
+          name: name,
+          email: email,
+          number: number,
+          subject: subject,
+          message: message,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       setState({ name: "", email: "", number: "", subject: "", message: "" });
       toast.success("Form Submitted Successfully");
     }
   };
 
-    const handleInputChange = (e) => {
-      let { name, value } = e.target;
-      setState({ ...state, [name]: value });
-    };
-    return (
+  const handleInputChange = (e) => {
+    let { name, value } = e.target;
+    setState({ ...state, [name]: value });
+  };
+  return (
     <section className="contact-section">
       <div className="container">
         <ToastContainer position="top-center" />
@@ -88,13 +89,13 @@ function Contact() {
                         <div className="col-md-6 col-12 mb-30">
                           <div className="form-group">
                             <input
-                                type="number"
-                                className="form-control"
-                                name="number"
-                                placeholder="Number"
-                                onChange={handleInputChange}
-                                value={number}
-                              />
+                              type="number"
+                              className="form-control"
+                              name="number"
+                              placeholder="Number"
+                              onChange={handleInputChange}
+                              value={number}
+                            />
                           </div>
                         </div>
                         <div className="col-md-6 col-12 mb-30">
@@ -135,7 +136,10 @@ function Contact() {
                     <ul>
                       <li>
                         <h4>Address</h4>
-                        <p>Ho Chi Minh City University of Technology, District 10, HCMC</p>
+                        <p>
+                          Ho Chi Minh City University of Technology, District
+                          10, HCMC
+                        </p>
                       </li>
                       <li>
                         <h4>Phone</h4>

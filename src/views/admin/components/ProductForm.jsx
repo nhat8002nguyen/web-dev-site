@@ -299,7 +299,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
               <div className="product-form-image-wrapper">
                 {(imageFile.image.url || product.image) && (
                   <ImageLoader
-                    alt=""
+                    alt="img"
                     className="product-form-image-preview"
                     src={imageFile.image.url || product.image}
                   />
